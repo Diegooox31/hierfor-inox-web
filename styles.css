@@ -1,0 +1,80 @@
+/* Estilo base */
+:root { --brand:#0d6efd; }
+html,body { scroll-behavior:smooth; }
+.navbar, footer { backdrop-filter: saturate(180%) blur(8px); }
+.hero {
+  background: radial-gradient(1200px 400px at 20% 10%, #f8f9fa, #ffffff);
+  border-bottom: 1px solid #eee;
+}
+.hero-card { background:#fff; }
+.card { border-radius:1rem; }
+.btn { border-radius:.8rem; }
+.whatsapp-fab {
+  position: fixed; right: 16px; bottom: 16px; z-index: 50;
+  display:inline-flex; align-items:center; justify-content:center;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25D366; color:#fff; text-decoration:none; font-size:24px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+}
+img.card-img-top { aspect-ratio: 16/10; object-fit: cover; }
+
+/* Ajustes para la sección de proyectos */
+#gridProyectos { margin-top: 8px; }
+.card-body h3.h6 { font-size: 1rem; font-weight: 700; }
+.card { overflow: hidden; }
+
+/* --- NUEVOS ESTILOS para el Logo en el Encabezado --- */
+
+/* Contenedor principal de la Navbar (logo + enlaces) */
+.header-logo-nav {
+    padding-top: 0;
+    padding-bottom: 0;
+    /* Crea la línea azul y el fondo */
+    border-bottom: 4px solid #005691; /* La línea azul oscura principal */
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0); /* Fondo sutil para el efecto */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    min-height: 100px; /* Altura mínima para que quepa el logo */
+}
+
+.header-logo-nav .container {
+    min-height: 100px;
+}
+
+/* Contenedor del Logo: Elimina el padding de Bootstrap */
+.logo-container {
+    padding: 0;
+    margin-right: 20px; 
+}
+
+/* La imagen del logo */
+.logo-inline-img {
+    height: auto;
+    max-height: 90px; /* Tamaño del logo en escritorio */
+    width: auto;
+    display: block;
+}
+
+/* Ajustes para los enlaces de navegación */
+.header-logo-nav .navbar-nav .nav-link {
+    font-weight: bold;
+    color: #333 !important;
+    transition: color 0.2s ease;
+}
+
+.header-logo-nav .navbar-nav .nav-link:hover,
+.header-logo-nav .navbar-nav .nav-link.active {
+    color: #005691 !important; /* Color azul de la marca al interactuar */
+}
+
+/* Estilos Responsivos (Móvil) */
+@media (max-width: 992px) {
+    .header-logo-nav {
+        min-height: auto;
+        border-bottom: 1px solid #eee; /* Borde simple en móvil */
+        background: #fff;
+    }
+    
+    .logo-inline-img {
+        max-height: 50px; /* Logo más pequeño en móvil */
+    }
+}

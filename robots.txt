@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+# Sitemap: use an absolute URL after you publish (example below) or keep relative '/sitemap.xml'
+# Sitemap: https://Diegooox31.github.io/hierfor-site/sitemap.xml
+Sitemap: /sitemap.xml
