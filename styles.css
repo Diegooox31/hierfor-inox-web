@@ -61,7 +61,7 @@ html,body { scroll-behavior:smooth; }
     text-align: left; /* La tarjetita se queda alineada a la izquierda */
   }
 }
-}
+
 img.card-img-top { aspect-ratio: 16/10; object-fit: cover; }
 
 /* Ajustes para la sección de proyectos */
