@@ -62,7 +62,11 @@ html,body { scroll-behavior:smooth; }
   }
 }
 
-img.card-img-top { aspect-ratio: 16/10; object-fit: cover; }
+.card-img-top {
+    height: 250px;       /* Forzamos la misma altura para todas */
+    object-fit: cover;   /* Esto evita que se estiren o aplasten */
+    width: 100%;
+}
 
 /* Ajustes para la sección de proyectos */
 #gridProyectos { margin-top: 8px; }
