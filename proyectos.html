@@ -16,7 +16,10 @@
     <a class="navbar-brand logo-container" href="index.html">
       <img src="assets/Logo, Hiefor.png" 
            alt="HIERFOR-INOX - Calidad residencial en barandales y trabajos especiales" 
-           class="logo-inline-img">
+           class="logo-inline-img"
+            data-bs-toggle="modal"
+            data-bs-target="#proyectoModal"
+            onclick="cambiarImagen(this)">
     </a>
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
@@ -59,7 +62,7 @@
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card h-100 shadow-sm">
-            <img src="assets/proy-barandal.jpg" class="card-img-top" alt="Barandal de herrería" loading="lazy">
+            <img src="assets/proy-barandal.jpg" class="card-img-top" alt="Barandal de herrería" loading="lazy" data-bs-toggle="modal" data-bs-target="#proyectoModal" onclick="cambiarImagen(this)">
             <div class="card-body">
               <h3 class="h6 mb-1">Barandal de herrería</h3>
               <span class="badge text-bg-secondary">Herrería</span>
@@ -68,7 +71,7 @@
         </div>
         <div class="col-md-4">
           <div class="card h-100 shadow-sm">
-            <img src="assets/proy-cancel.jpg" class="card-img-top" alt="Cancel de vidrio templado" loading="lazy">
+            <img src="assets/proy-cancel.jpg" class="card-img-top" alt="Cancel de vidrio templado" loading="lazy" data-bs-toggle="modal" data-bs-target="#proyectoModal" onclick="cambiarImagen(this)">
             <div class="card-body">
               <h3 class="h6 mb-1">Cancel de vidrio</h3>
               <span class="badge text-bg-secondary">Vidrio</span>
