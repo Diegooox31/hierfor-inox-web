@@ -128,3 +128,14 @@ html,body { scroll-behavior:smooth; }
         max-height: 50px; /* Logo más pequeño en móvil */
     }
 }
+
+/* Indica que se puede hacer clic y añade un efecto suave */
+.card-img-top {
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.card-img-top:hover {
+    filter: brightness(80%); /* Se oscurece un poquito al pasar el mouse */
+    transform: scale(1.01);    /* Crece casi imperceptiblemente */
+}
