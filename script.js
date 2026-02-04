@@ -57,4 +57,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // CTA en la página de contacto (Option A): si existe el botón, asignamos un mensaje predefinido
   const ctaContactPage = document.getElementById("ctaContactPage");
   if (ctaContactPage) ctaContactPage.href = waLink("Hola, quisiera información y una cotización. Vengo desde la página web.");
+
+  function cambiarImagen(element) {
+    // 1. Obtenemos la ruta de la imagen (src) y el texto (alt) de la foto clickeada
+    const srcOriginal = element.getAttribute('src');
+    const textoOriginal = element.getAttribute('alt');
+    
+    // 2. Buscamos el modal y le inyectamos esos datos
+    document.getElementById('modalImg').src = srcOriginal;
+    document.getElementById('modalTitle').innerText = textoOriginal;
+}
 });
