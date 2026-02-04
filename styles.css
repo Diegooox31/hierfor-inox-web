@@ -129,13 +129,31 @@ html,body { scroll-behavior:smooth; }
     }
 }
 
-/* Indica que se puede hacer clic y añade un efecto suave */
+/* Estilos para la Galería Dinámica */
 .card-img-top {
-    cursor: pointer;
-    transition: 0.3s ease;
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer; /* Indica que es clickeable */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .card-img-top:hover {
-    filter: brightness(80%); /* Se oscurece un poquito al pasar el mouse */
-    transform: scale(1.01);    /* Crece casi imperceptiblemente */
+    transform: scale(1.02);
+    filter: brightness(90%);
+}
+
+.card {
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Ajustes del Modal */
+#modalImg {
+    width: 100%;
+    max-height: 80vh; /* Para que no se salga de la pantalla */
+    object-fit: contain;
+    background: #f8f9fa;
 }
