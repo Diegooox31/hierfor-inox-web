@@ -161,17 +161,13 @@ html,body { scroll-behavior:smooth; }
 /* === Estilos para el Banner Principal === */
 .hero-banner {
     width: 100%;
-    /* Por si la imagen es muy grande */
+    margin-bottom: 50px; /* <--- Este es el espacio en blanco que separa la imagen de lo de abajo */
 }
 
 .hero-banner img {
-    width: 100%;     /* Que ocupe todo el ancho disponible */
+    width: 100%;     
     height: 500px;
     object-fit: cover; 
-    object-position: center center;   /* Que la altura se ajuste automáticamente para no deformarse */
-    display: block;  /* Quita un molesto espacio en blanco que a veces queda abajo */
-    /* Opcional: si la imagen es demasiado alta y te ocupa mucha pantalla, 
-       puedes descomentar las siguientes dos líneas para limitarla: */
-    /* max-height: 600px; */
-    /* object-fit: cover; */
+    object-position: center 50%; /* 50% es el centro exacto. Si quieres ver más arriba baja el número a 30%. Si quieres ver más piso, súbelo a 70% */
+    display: block;  
 }
