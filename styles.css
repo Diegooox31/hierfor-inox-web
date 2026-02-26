@@ -2,21 +2,34 @@
 :root { --brand:#0d6efd; }
 html,body { scroll-behavior:smooth; }
 .navbar, footer { backdrop-filter: saturate(180%) blur(8px); }
-.hero {
-  background: radial-gradient(1200px 400px at 20% 10%, #f8f9fa, #ffffff);
-  border-bottom: 1px solid #eee;
-}
+
 /* Color de acento para el texto */
 .text-primary-color { color: #00a8ff; }
 
+/* === BANNER PRINCIPAL (ESCALERA) === */
+.hero-banner {
+    width: 100%;
+    margin-bottom: 50px; 
+}
+
+.hero-banner img {
+    width: 100%;     
+    height: 500px;
+    object-fit: cover; 
+    object-position: center 50%;
+    display: block;  
+}
+
+/* === SECCIÓN OSCURA "HERRERÍA Y ALUMINIO" === */
 .hero {
   /* Fondo estilo industrial elegante */
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
               url('assets/21527fa8-4cda-4e35-bff1-9cbf9655e027.jpg'); 
   background-size: cover;
   background-position: center;
-  min-height: 80vh; /* Altura casi completa de pantalla */
+  min-height: 80vh; 
   position: relative;
+  border-bottom: 1px solid #eee;
 }
 
 .hero-card-modern {
@@ -49,29 +62,45 @@ html,body { scroll-behavior:smooth; }
   }
   
   .hero h1 {
-    font-size: 2.2rem; /* Título más cómodo para leer en móvil */
+    font-size: 2.2rem; 
   }
 
   .hero .d-flex {
-    justify-content: center; /* Centra los botones en móvil */
+    justify-content: center; 
   }
   
   .hero-card-modern {
     margin-top: 30px;
-    text-align: left; /* La tarjetita se queda alineada a la izquierda */
+    text-align: left; 
   }
-}
-
-.card-img-top {
-    height: 250px;       /* Forzamos la misma altura para todas */
-    object-fit: cover;   /* Esto evita que se estiren o aplasten */
-    width: 100%;
 }
 
 /* Ajustes para la sección de proyectos */
 #gridProyectos { margin-top: 8px; }
 .card-body h3.h6 { font-size: 1rem; font-weight: 700; }
-.card { overflow: hidden; }
+.card { 
+    overflow: hidden; 
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* Estilos para las imágenes de las tarjetas (Servicios y Galería) */
+.card-img-top {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer; 
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card-img-top:hover {
+    transform: scale(1.02);
+    filter: brightness(90%);
+}
+
 
 /* --- NUEVOS ESTILOS para el Logo en el Encabezado --- */
 
@@ -79,18 +108,17 @@ html,body { scroll-behavior:smooth; }
 .header-logo-nav {
     padding-top: 0;
     padding-bottom: 0;
-    /* Crea la línea azul y el fondo */
-    border-bottom: 4px solid #005691; /* La línea azul oscura principal */
-    background: linear-gradient(to bottom, #ffffff, #f0f0f0); /* Fondo sutil para el efecto */
+    border-bottom: 4px solid #005691; 
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0); 
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-    min-height: 100px; /* Altura mínima para que quepa el logo */
+    min-height: 100px; 
 }
 
 .header-logo-nav .container {
     min-height: 100px;
 }
 
-/* Contenedor del Logo: Elimina el padding de Bootstrap */
+/* Contenedor del Logo */
 .logo-container {
     padding: 0;
     margin-right: 20px; 
@@ -99,7 +127,7 @@ html,body { scroll-behavior:smooth; }
 /* La imagen del logo */
 .logo-inline-img {
     height: auto;
-    max-height: 90px; /* Tamaño del logo en escritorio */
+    max-height: 90px; 
     width: auto;
     display: block;
 }
@@ -113,61 +141,26 @@ html,body { scroll-behavior:smooth; }
 
 .header-logo-nav .navbar-nav .nav-link:hover,
 .header-logo-nav .navbar-nav .nav-link.active {
-    color: #005691 !important; /* Color azul de la marca al interactuar */
+    color: #005691 !important; 
 }
 
 /* Estilos Responsivos (Móvil) */
 @media (max-width: 992px) {
     .header-logo-nav {
         min-height: auto;
-        border-bottom: 1px solid #eee; /* Borde simple en móvil */
+        border-bottom: 1px solid #eee; 
         background: #fff;
     }
     
     .logo-inline-img {
-        max-height: 50px; /* Logo más pequeño en móvil */
+        max-height: 50px; 
     }
-}
-
-/* Estilos para la Galería Dinámica */
-.card-img-top {
-    height: 250px;
-    object-fit: cover;
-    cursor: pointer; /* Indica que es clickeable */
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.card-img-top:hover {
-    transform: scale(1.02);
-    filter: brightness(90%);
-}
-
-.card {
-    transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
 /* Ajustes del Modal */
 #modalImg {
     width: 100%;
-    max-height: 80vh; /* Para que no se salga de la pantalla */
+    max-height: 80vh; 
     object-fit: contain;
     background: #f8f9fa;
-}
-
-/* === Estilos para el Banner Principal === */
-.hero-banner {
-    width: 100%;
-    margin-bottom: 50px; /* <--- Este es el espacio en blanco que separa la imagen de lo de abajo */
-}
-
-.hero-banner img {
-    width: 100%;     
-    height: 500px;
-    object-fit: cover; 
-    object-position: center 50%; /* 50% es el centro exacto. Si quieres ver más arriba baja el número a 30%. Si quieres ver más piso, súbelo a 70% */
-    display: block;  
 }
