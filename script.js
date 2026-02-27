@@ -54,3 +54,62 @@ document.addEventListener("DOMContentLoaded", () => {
     `).join("");
   }
 });
+
+// === JAVASCRIPT PARA GALERÍA DINÁMICA ===
+
+// Función para filtrar la galería
+function filtrarGaleria(categoria) {
+  // Seleccionar todos los elementos de la galería
+  const items = document.querySelectorAll('.item-galeria');
+  
+  // Mostrar u ocultar según categoría
+  items.forEach(item => {
+    if (categoria === 'todos' || item.classList.contains(categoria)) {
+      item.classList.remove('d-none'); // Muestra
+    } else {
+      item.classList.add('d-none');    // Oculta (clase de Bootstrap)
+    }
+  });
+
+  // Manejar estado activo de botones
+  const container = document.getElementById("btnContainerGaleria");
+  if(container) {
+    const btns = container.getElementsByClassName("btn");
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].classList.remove("active"); // Quita active a todos
+    }
+  }
+  // Añade active al botón clickeado (necesitamos el evento para esto más limpio, 
+  // pero esta forma directa funciona por ahora).
+  event.target.classList.add("active");
+}
+
+// === CÓDIGO PARA VINCULAR GALERÍA AL MODAL EXISTENTE ===
+// Ejecutar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    const proyectoModal = document.getElementById('proyectoModal');
+    
+    if (proyectoModal) {
+      // Usamos delegación de eventos en las imágenes dinámicas
+      const galeriaGrid = document.querySelector('#galeria-trabajos .row');
+      if (galeriaGrid) {
+        galeriaGrid.addEventListener('click', function(event) {
+          if (event.target.classList.contains('img-dynamic')) {
+            const imageElement = event.target;
+            const src = imageElement.getAttribute('src');
+            const alt = imageElement.getAttribute('alt');
+            
+            const modalTitle = proyectoModal.querySelector('.modal-title');
+            const modalBodyImg = proyectoModal.querySelector('#modalImg');
+
+            modalTitle.textContent = alt;
+            modalBodyImg.src = src;
+            
+            // Abrir el modal programáticamente usando Bootstrap
+            const bsModal = new bootstrap.Modal(proyectoModal);
+            bsModal.show();
+          }
+        });
+      }
+    }
+});
